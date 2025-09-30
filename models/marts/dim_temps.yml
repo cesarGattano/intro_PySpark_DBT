@@ -1,0 +1,65 @@
+version: 2
+
+models:
+  - name: dim_temps
+    description: Une entrée pour chaque date avec au moins un achat
+    columns:
+      - name: date
+        description: La date du jour d'un achat
+        data_tests:
+          - not_null
+          - unique
+      - name: year
+        description: L'année (obligatoire)
+        data_tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 2023
+                max_value: 2025
+                inclusive: true
+      - name: month
+        description: Le mois (obligatoire)
+        data_tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 1
+                max_value: 12
+                inclusive: true
+      - name: day
+        description: Le jour (obligatoire)
+        data_tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 1
+                max_value: 31
+                inclusive: true
+      - name: dow
+        description: Le jour de la semaine (obligatoire)
+        data_tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 6
+                inclusive: true
+      - name: doy
+        description: Le jour de l'année (obligatoire)
+        data_tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 1
+                max_value: 366
+                inclusive: true
+      - name: week
+        description: La semaine (obligatoire)
+        data_tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 1
+                max_value: 53
+                inclusive: true
