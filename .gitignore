@@ -214,3 +214,6 @@ data/
 profiles.yml
 .user.yml
 dbt_project.yml
+
+# Logs
+logs
