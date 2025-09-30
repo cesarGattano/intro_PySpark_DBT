@@ -2,7 +2,12 @@
 Travail d'introduction aux techno PySpark et DBT
 
 
-# Set up
+# Installation
 
-Configurer le fichier profiles.yml
-Configurer le fichier dbt_project.yml
+* blabla requirements
+* Configurer le fichier profiles.yml
+* Configurer le fichier dbt_project.yml
+* Installer les dépendances dbt
+```
+dbt deps
+```
