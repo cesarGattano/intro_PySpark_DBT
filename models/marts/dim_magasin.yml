@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: dim_magasin
+    description: Une entrée pour chaque magasin
+    columns:
+      - name: id
+        description: La clé primaire d'identification du magasin
+        data_tests:
+          - not_null
+          - unique
+      - name: nom
+        description: Le nom du magasin (obligatoire)
+        data_tests:
+          - not_null
+      - name: type
+        description: Le type de magasin (obligatoire, enum)
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ["physique", "en ligne"]
+      - name: region
+        description: La région du magasin (obligatoire)
+        data_tests:
+          - not_null
