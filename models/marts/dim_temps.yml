@@ -63,3 +63,12 @@ models:
                 min_value: 1
                 max_value: 53
                 inclusive: true
+      - name: isoyear
+        description: L'année ISO associée au numéro de semaine (obligatoire)
+        data_tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 2022
+                max_value: 2025
+                inclusive: true

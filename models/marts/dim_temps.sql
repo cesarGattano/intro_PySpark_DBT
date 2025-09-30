@@ -6,6 +6,7 @@ final AS (
         date,
         EXTRACT(YEAR FROM date) AS year,
         EXTRACT(MONTH FROM date) AS month,
+        EXTRACT(ISOYEAR FROM date) AS isoyear,
         EXTRACT(WEEK FROM date) AS week,
         EXTRACT(DAY FROM date) AS day,
         EXTRACT(DOW FROM date) AS dow,
