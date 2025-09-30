@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_client
+    description: Une entrée pour chaque client
+    columns:
+      - name: id
+        description: La clé primaire d'identification du client
+        data_tests:
+          - not_null
+          - unique
+      - name: nom
+        description: Le nom du client (obligatoire)
+        data_tests:
+          - not_null
+      - name: age
+        description: L'âge du client (obligatoire, > 0)
+        data_tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                inclusive: false
+      - name: ville
+        description: La ville du client (obligatoire)
+        data_tests:
+          - not_null
