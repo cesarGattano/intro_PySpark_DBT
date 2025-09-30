@@ -209,3 +209,8 @@ __marimo__/
 
 # Database
 data/
+
+# Config
+profiles.yml
+.user.yml
+dbt_project.yml
