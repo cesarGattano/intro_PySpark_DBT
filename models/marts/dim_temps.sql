@@ -1,5 +1,5 @@
 WITH ventes AS (
-    SELECT * FROM {{ ref('stagged_ventes') }}
+    SELECT date FROM {{ ref('stg_ventes') }}
 ),
 final AS (
     SELECT

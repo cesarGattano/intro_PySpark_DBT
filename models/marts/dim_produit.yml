@@ -24,11 +24,3 @@ models:
         description: La marque du client (obligatoire)
         data_tests:
           - not_null
-      - name: prix_catalogue
-        description: Le prix catalogue du (obligatoire, > 0)
-        data_tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              arguments:
-                min_value: 0
-                inclusive: false

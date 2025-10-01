@@ -1,16 +1,15 @@
 WITH ventes AS (
-    SELECT * FROM {{ ref('stagged_ventes') }}
+    SELECT * FROM {{ ref('stg_ventes') }}
 ),
 final AS (
     SELECT
         row_number() over () AS id,
         produit_nom AS nom,
         produit_categorie AS categorie,
-        produit_marque AS marque,
-        prix_catalogue
+        produit_marque AS marque
     FROM ventes
-    GROUP BY nom, categorie, marque, prix_catalogue
-    ORDER BY categorie, marque, nom, prix_catalogue
+    GROUP BY nom, categorie, marque
+    ORDER BY categorie, marque, nom
 )
 
 SELECT * FROM final
